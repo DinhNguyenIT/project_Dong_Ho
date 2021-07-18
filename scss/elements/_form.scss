@@ -1,0 +1,31 @@
+.form-footer {
+    margin-top: 40px;
+    .ps-form-email {
+        position: relative;
+        padding: 0 70px;
+
+        .btn-sub__email {
+            position: absolute;
+            background-color: #fff;
+            top: 0;
+            right: 70px;
+            padding: 0 14px;
+            height: 46px;
+            border: none;
+            border-radius: 50%;
+        }
+
+        .btn-sub__email:hover {
+            background-color: #999;
+            opacity: 0.6;
+        }
+    }
+
+    .form-control {
+        height: 46px;
+        border-radius: 25px;
+        padding: 0 20px;
+        font-size: 1.4rem;
+    }
+
+}

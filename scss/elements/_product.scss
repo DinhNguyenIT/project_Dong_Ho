@@ -1,0 +1,168 @@
+.ps-product{
+    padding-bottom: 30px;
+
+    .ps-product-wrap{
+        position: relative;
+
+        .ps-product__discount{
+            position: absolute;
+            text-align: center;
+            top: 30px;
+            left: -7px;
+            z-index: 999;
+            .ps-product__discount-number{
+                margin-bottom: 0;
+                color: white;
+                padding: 10px 4px;
+                font-size: 1.6rem;
+                font-weight: 600;
+                background-color: $color-primary;
+                border-radius: 50%;
+    
+            }
+        }
+    
+        .ps-product__thumbnail{
+            position: relative;
+            width: 100%;
+    
+            > a{
+                display: block;
+                overflow: hidden !important;
+
+                > img{
+                    max-width: 100%;
+                    height: auto;
+                    transition: 0.7s;
+                }
+            }
+
+            &:hover{
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    
+        .ps-product__content{
+            padding: 10px 10px 20px 10px;
+            text-align: center;
+            text-transform: uppercase;
+    
+            .ps-product__categories{
+                font-size: 1.1rem;
+                color: #888;
+            }
+    
+            .ps-product__title{
+                margin-bottom: 10px;
+                > a{
+                    //color: #1c1c1c;
+                    font-size: 1.3rem;
+                    line-height: 1.5rem;
+                }
+            }
+    
+            .ps-product__price{
+                font-size: 1.5rem;
+    
+                span.amount{
+                    color: #111;
+                }
+                > del{
+                    span.amount{
+                        margin-right: 3px;
+                        opacity: 0.6;
+                    }
+                   
+                }
+                > ins{
+                    text-decoration: none;
+                    span.amount{
+                        font-weight: 600;
+                    }
+                    
+                }
+            }
+        }
+        &:hover{
+            border: 2px dashed #ddd;
+
+            .ps-product__bag{
+                visibility:visible ;
+                top: calc(56% - 15px);
+                transition: top linear .3s;
+                animation: headerNotifyGrowth ease-in .5s;
+            }
+        }
+    }
+}
+
+.ps-product__bag{
+    position: absolute;
+    top: 56%;
+    left: 13px;
+    cursor: pointer; 
+    transition: 0.3s; 
+    
+    visibility: hidden;
+
+    > .ps-product__bag-mess{
+        position: absolute;
+        width: 115px;
+        text-align: center;
+        top: -207%;
+        left: -45px;
+        color: white;
+        background-color: black;
+        margin-bottom: 0;
+        border-radius: 6px;
+        padding: 3px 5px;
+        animation: headerNotifyGrowth ease-in .3s;
+        display: none;
+
+        &::before{
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 8px;
+            border-style: solid;
+            border-color: black transparent transparent transparent;
+        }
+    }
+    > strong{
+        position: relative;
+        font-weight: bold;
+        border: 2px solid black;
+        padding: 3px 6px;
+        color: black;
+        background-color: white;
+
+        &::before{
+            content: "";
+            position: absolute;
+            height: 9px;
+            width: 15px;
+            top: -9px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 2px solid black;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+
+        }
+    }
+
+    &:hover{
+        .ps-product__bag-mess{
+            display: block;
+        }
+        
+        > strong{
+            background-color: black;
+            color: white;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+#footer{
+    position: relative;
+    background-color: #000;
+    color: #fff;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0 15px;
+
+    .footer-bottom_wrap{
+        
+        color: rgba(255,255,255,0.5);
+
+        p {
+            margin-bottom: 0;
+            font-size: 1.4rem;
+        }
+
+        img {
+            width: 20px;
+            vertical-align: sub;
+        }
+
+        a {
+            font-weight: bold;
+        }
+    }
+}

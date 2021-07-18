@@ -1,0 +1,132 @@
+.ps-logo{
+    display: block;
+    width: 250px;
+    text-align: start;
+
+    img{
+        height: 54px;
+    }
+}
+.arrow-up{
+    position: absolute;
+    top: 18px;
+    left: 24px;
+    height: 0;
+    width: 0;
+    display: none;
+    z-index: 1000;
+    animation: headerNotifyGrowth ease-in .3s;
+    
+    &::before,
+    &::after{
+        content: "";
+        position: absolute;
+        border-style: solid;
+        display: block;
+    }
+    &::before{
+        top: 0px;
+        left: 0px;
+        border-width: 13px 12px;
+        border-color: transparent transparent $color-primary transparent; 
+    }
+    &::after{ 
+        top: 6px;
+        left: 2px;
+        border-width: 10px 10px;
+        border-color: transparent transparent white transparent;
+    }
+
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    &.fixed{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+}
+
+.header--default{
+    padding: 10px 0;
+    
+    &.transparent{
+        background-color: transparent;
+    }
+
+    @media screen and (min-width: 1200px) {
+        > .container{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-width: 1200px;
+
+        }
+
+    }
+
+    @media screen and (max-width: 991px) {
+        .header__center{
+            display: none;
+        }
+    }
+
+    .header-wrap{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .header__center{
+        > .menu {
+            flex-wrap: wrap;
+            justify-content: start;
+        }
+    }
+
+    .header__right{
+        .icon-header{
+            > li{
+                margin: 0 12px;
+            }
+            i{
+                font-size: 1.8rem;
+            }
+            
+        }
+
+        .search-header{
+            .sub-menu{
+                width: 600px;
+                left: -435px; 
+                padding: 15px 20px; 
+            }
+
+            .arrow-up{
+                left: -4px;
+            }
+        }
+
+        .bag-header{
+            .sub-menu{
+                width: 280px; 
+                left: -225px;
+                padding: 15px 20px;  
+            }
+
+            .arrow-up{
+                left: -4px;
+            }
+        }
+        
+    }
+
+}
+
